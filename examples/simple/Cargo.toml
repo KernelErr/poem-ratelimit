@@ -3,10 +3,10 @@ name = "simple"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
 [dependencies]
-tokio = { version = "1.17", features = ["full"] }
-redis = "0.17"
+poem-ratelimit = { path = "../.." }
+
+tokio = { version = "1.17", features = ["rt-multi-thread"] }
+redis = { version = "0.21", features = ["tokio-comp", "connection-manager"] }
 poem = "1.3"
-poem-ratelimit = { path = "../../" }
+serde_yaml = "0.8"

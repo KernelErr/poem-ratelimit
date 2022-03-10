@@ -1,13 +1,14 @@
+use poem::http::Uri;
 use poem::web::RemoteAddr;
 
-pub fn global() -> String {
+pub(crate) fn global() -> String {
     "ratelimit_global".to_string()
 }
 
-pub fn ip(addr: &RemoteAddr) -> String {
+pub(crate) fn ip(addr: &RemoteAddr) -> String {
     format!("ratelimit_ip_{}", addr)
 }
 
-pub fn route(uri: &str) -> String {
+pub(crate) fn route(uri: &Uri) -> String {
     format!("ratelimit_route_{}", uri)
 }
