@@ -1,7 +1,7 @@
 global:
   # Global limit for all connections
   max_requests: 20
-  # Seconds to refresh limit, we allow 1000req/30s here
+  # Seconds to refresh limit, we allow 20req/30s here
   time_window: 30
 ip:
   # QPS limit for a single client IP

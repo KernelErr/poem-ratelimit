@@ -99,11 +99,13 @@ where
         if let Some(global_config) = &self.config.global {
             let key = key::global();
             self.check(&key, global_config).await?;
-        } else if let Some(ip_config) = &self.config.ip {
+        }
+        if let Some(ip_config) = &self.config.ip {
             let remote_addr = req.remote_addr().clone();
             let key = key::ip(&remote_addr);
             self.check(&key, ip_config).await?;
-        } else if let Some(route_config) = &self.config.route {
+        }
+        if let Some(route_config) = &self.config.route {
             let uri = req.uri();
             if let Some(route_config_record) = route_config.get(uri) {
                 let key = key::route(uri);
