@@ -5,10 +5,14 @@ use serde::de::Error;
 use serde::ser::SerializeMap;
 use serde::{Deserialize, Deserializer, Serialize, Serializer};
 
+/// Config of rate limit
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Config {
+    /// Limit for all requests
     pub global: Option<ConfigRecord>,
+    /// Limit for a g client IP
     pub ip: Option<ConfigRecord>,
+    /// Limit for a specific route
     #[serde(
         deserialize_with = "deserialize_route",
         serialize_with = "serialize_route",
@@ -58,8 +62,11 @@ where
     }
 }
 
+/// Rate limit rule
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct ConfigRecord {
+    /// How many requests can be made in a time window
     pub max_requests: usize,
+    /// Time window in seconds
     pub time_window: usize,
 }

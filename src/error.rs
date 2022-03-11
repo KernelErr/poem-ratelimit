@@ -1,6 +1,7 @@
 use poem::error::ResponseError;
 use poem::http::StatusCode;
 
+/// Error returned when rate limit exceeded
 #[derive(Debug, thiserror::Error)]
 #[error("too many requests")]
 pub struct RateLimitError;
