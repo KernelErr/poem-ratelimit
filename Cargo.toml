@@ -1,14 +1,14 @@
 [package]
 name = "poem-ratelimit"
 authors = ["LI Rui <me@lirui.tech>"]
-version = "0.2.1"
+version = "0.2.2"
 edition = "2021"
 readme = "README.md"
 description = """
 poem-ratelimit is a ratelimit middleware for poem web framework.
 """
-homepage = "https://devs.day/poem-ratelimit"
-repository = "https://github.com/devsday/poem-ratelimit"
+homepage = "https://github.com/KernelErr/poem-ratelimit"
+repository = "https://github.com/KernelErr/poem-ratelimit"
 license = "Apache-2.0"
 keywords = ["ratelimit"]
 categories = ["web-programming"]
